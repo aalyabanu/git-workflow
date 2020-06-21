@@ -1,11 +1,176 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Introduction to Git Workflow and Unix Shell</title>
-  </head>
-  <h1>
-   Introduction to Git Workflow   
-  </h1>
 
-  <body></body>
+<head>
+  <title>Introduction to Git Workflow and Unix Shell</title>
+</head>
+
+<body>
+  <h1>
+    Introduction to Git Workflow
+  </h1>
+  <img id="block_diagram" src="git_workflow.jpeg" alt="block diagram showing git version control workflow" width="800" height="450" />
+  <p> Git version control workflow consists of four fundamental elements as shown in the block diagram. </p>
+  <!-- <h2> Working Directory</h2> -->
+  <p> The <b>working directory</b> is the area where you are working with when you're making changes to your file. It is
+    a
+    single
+    checkout of one version of the project. The files are pulled out of the Git directory and placed in the working
+    directory for you to work on. Git directory is the place where Git stores all the information (i.e. the metadata and
+    object database) necessary for your
+    project. </p>
+
+  <!-- <h2> Staging area</h2> -->
+  <p>The <b>staging area</b> is a file which is generally located in the Git directory and stores information about what
+    will go
+    into your next commit. A <b>commit </b>is a <i>snapshot </i>of your local repository at one point in time i.e. the
+    state of all the files in your repository at a specific point in time. Only the changes in the staging area are put
+    into the next commit. The staging area is also
+    known as <i>index</i>. For consistency, we will stick to calling it staging area in this document. </p>
+  <p>A <b>repository </b>is just the directory where Git will keep an eye on things for you by storing all the files and
+    folders necessary for your project. You can create repositories
+    for each of your projects locally and globally. <b>Local repository </b>is present in your computer and has the Git
+    directory for your project. In contrast, <b>remote repository </b>has the Git directory stored in some remote
+    location. <b>Github</b> is a famous platform for remote repositories. </p>
+
+  <p>A basic Git workflow consists of the following steps:
+  <ol>
+    <li> Files are modified in the working directory.</li>
+    <li>The modified files are then staged i.e. marked to be committed (but not yet committed). This can be done using
+      the
+      <b>git
+        add</b> command. </li>
+    <li>Next, the files that are staged can be committed by executing <b>git commit</b> command. This simply means that
+      the changes that you made to your file (snapshots) are safely stored permanently in your local repository.</li>
+    <li>Changes that are in your local repository can be pushed explicitly to a remote repository using <b>git push</b>
+      command. This enables changes that you made to be visible to anyone who has access to the remote repository.</li>
+  </ol>
+  </p>
+  <p>Now for the opposite flow i.e. when extracting files from the remote repository (demonstrated by blue arrows in the <a href="#block_diagram">Git workflow block diagram</a>), you use the command <b>git fetch
+    </b> to extract files from the remote repository to your local repository. Note that at this point the project
+    files are not yet in the working directory. In order to do that you use the command <b>git merge.</b> This will
+    update
+    the project files in your working directory to what was in the remote repository at the time of fetch. Alternatively
+    you
+    can use <b>git pull </b>command to get the files from remote directly directly into your working directory. You can
+    check the changes between the project files in your working directory and local repository by running <b>git diff
+      HEAD </b>command. Similarly,by just running the <b>git diff </b>command you can check the difference between your
+    staging area and the working directory. This can be handy when you want to know all the changes that you made but
+    not yet staged as well as the changes that are staged and about to be committed. </p>
+  <p>Now that you are familiar with basic Git workflow, lets look at some of the common terms that we come across in Git
+    version control system.</p>
+  <h2> Pull request</h2>
+  <p>A pull request in Git lets you submit changes that you have made in your local repository to a remote repository in
+    order to be reviewed and considered for inclusion in project's main repository. Once a pull request is sent, those
+    who have access to the remote repository can review the changes, flag any problems, discuss potential modifications
+    and even push follow-up commits if necessary.
+  </p>
+  <h2>branch</h2>
+  <p> Branch is basically an independent line of development. Branches allow us to work on different versions of the
+    same file in parallel. In Git, creating a branch means deviating from the main branch to continue working without
+    messing up the main branch. Our edits on one branch can be independent from work on other branches. We can then
+    incorporate or merge our changes to other branches. We can have branches for different purposes such as production,
+    development and debugging. </p>
+  <p> The default branch name in Git is <b>master.</b> Every time you commit, the master branch pointer moves forward
+    automatically. A new branch can be created using the <b>git branch</b> command. Changes made in other branches can
+    be merged into master branch using the <b>git merge </b> command.</p>
+  <h2> Fork and clone</h2>
+  <p>In Github, a fork is a copy of a repository. Forking a repository allows you to make changes to a project without
+    affecting the original project. Forking is something you do when you are not a direct collaborator to a project. You
+    can fork a repository simply by clicking on the fork button in the header of
+    a repository.</p>
+
+  <p>Cloning on the other hand means, creating a local copy a remotely located project on your computer so that you can
+    sync between the local and remote locations of the project.In Git,cloning can be performed using the command <b>git
+      clone.</b></p>
+
+  <h1>Unix shell</h1>
+  <p>A <b>shell </b>is a program that provides an interface between a user and an operating system (OS) kernel. It
+    interprets the commands the user types and arranges for them to be executed. <b>Unix shell </b>is a command line
+    interface in which you can enter commands by typing or uploading a file.</p>
+
+  <p><b>Bash</b> is a default shell available on Linux and MacOs. It stands for Bourne Again Shell. In Windows Operating
+    System, we use <b>Git Bash</b> which is an application that provides Git command line experience on the operating
+    system.</p>
+  <h2>Git Bash prompt</h2>
+  <p>When logging into the Git Bash app in Windows, the default prompt looks something like this.</p>
+  <img src="bashprompt.PNG" alt="default Git bash prompt" width="700" height="300" />
+  <p>which translates to:</p>
+  <p> <i>username @ current computer: current directory $</i></p>
+  <p> The prompt can be customized to show what you want. You can start typing commands after the $ sign. Now let us perform some of the common operations in Unix Shell using Git Bash.</p>
+<h2> Listing files in a directory</h2>
+<p> You can use the <i>ls </i>command to list the files and directories in the current working directory.</p>
+<img src="ls.PNG" alt="default Git bash prompt" width="700" height="300" />
+<p>You can limit the files that are displayed by using fragments of filenames and wildcards as shown below:</p>
+<table cellpadding="10" cellspacing="5">
+  <tr>
+    <td><mark>ls star</mark></td>
+    <td>Lists files whose complete name is <i>star</i>; if <i>star</i> is a directory, it will display the contents of the <i>star</i> directory </td>
+  </tr>
+  <tr>
+    <td><mark>ls sta*</mark></td>
+    <td>Lists all files in the directory that begin with the characters <i>sta</i> (e.g. <i>sta, star, stardom, starwars.</i>) </td>
+  </tr>
+  <tr>
+    <td><mark>ls star?</mark></td>
+    <td>Lists all files in the directory that begin <i>star</i> followed by one character (e.g. <i>star1, star2, stars.</i>) </td>
+  </tr>
+</table>
+<p>When using <i>ls</i> command, you can control what is displayed by adding options to it. Some of the common options are listed below. </p>
+<!-- Table 2 -->
+<table cellpadding="10" cellspacing="5">
+  <tr>
+    <td><mark>-a</mark></td>
+    <td>Shows all files, including those beginning with a period (.).</td>
+  </tr>
+  <tr>
+    <td><mark>-d</mark></td>
+    <td>Shows directory names, but not contents </td>
+  </tr>
+  <tr>
+    <td><mark>-F</mark></td>
+    <td>Marks special files with symbols to indicate what they are: "/" for directories, "@" for symbolic links, "*" for executable programs </td>
+  </tr>
+  <tr>
+    <td><mark>-l</mark></td>
+    <td>Shows the rights to the file, the owner, the size in bytes and time of last modification.</td>
+  </tr>
+  <tr>
+    <td><mark>-R</mark></td>
+    <td>Recursively lists subdirectories </td>
+  </tr>
+</table>
+<h2>Showing and changing the working directory</h2>
+<p>You can display your working directory using the <i>pwd </i>command.</p>
+<img src="pwd.PNG" alt="example displaying the current working directory using pwd command" width="700" height="300" />
+<p>The above example shows that the user is currently in <i>aalya </i>folder in the <i>Users</i> directory of <i>C </i> drive </p>.
+<p>You can change the working directory to a different one using the <i>cd </i>command followed by the directory name.</p> 
+<img src="cd.PNG" alt="example for changing the working directory." width="700" height="300" />
+<p>The above example shows that the working directory has been changed to <i>Desktop</i> under <i>aalya </i>folder in the <i>Users</i> directory of <i>C </i> drive. A quick check using <i>pwd </i>command will confirm this. </p>. 
+<img src="pwd2.PNG" alt="example for checking the working directory after changing it." width="700" height="300" />
+</body>
+
+<h2>Creating a new directory</h2>
+<p>You can create a new directory by using the <i>mkdir </i>command followed by the directory name.</p>
+<img src="mkdir.PNG" alt="example for creating a new directory." width="700" height="300" />
+<p>In the above snapshot, a new directory named <i>mydirectory </i> has been created in the working directory i.e.Desktop in this case. You can check the existence of the new directory that has just been created simply by running the <i>ls</i> command or directly going to the working directory.</p>
+
+<h2> Creating files</h2>
+<p>There are different ways to create a file in Unix shell:</p>
+<p><b>Using touch command</b> </p> 
+<p> <mark>$ touch myfile.txt</mark></p>
+<p>In the above example, a new text file named <i>myfile </i> is created in the working directory. The newly created file will be listed when running the <i>ls </i>command. </p>
+
+<p><b>Using nano text editor</b></p>
+<p><mark>$ nano myfile.txt</mark></p>
+This is run a text editor called Nano and create a file named myfile.txt
+</p>
+<h2>Removing files</h2>
+<p>Files can be removed in Unix shell using the <i>rm </i>command.</p>
+<p><mark>$ rm myfile.txt </mark></p>
+<p>In the above example, file named <i>myfile.txt</i> is removed from the working directory.</p>
+<h1>Wrapping up</h1>
+<p> I have only scratched the surface of what is Git workflow and Unix shell. You can learn more on some of the advanced features of Git <a href="https://git-scm.com/book/en/v2">here</a>. There are also plenty of resources available online on Unix shell. Like most new concepts, the best way to learn Unix shell is to play around with it, until you know most commands by heart.  </p>
+
+</body>
 </html>
