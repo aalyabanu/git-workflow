@@ -9,8 +9,9 @@
   <h1>
     Introduction to Git Workflow
   </h1>
-  <img id="block_diagram" src="git_workflow.jpeg" alt="block diagram showing git version control workflow" width="800" height="450" />
-  <p> Git version control workflow consists of four fundamental elements as shown in the block diagram. </p>
+  <img id="block_diagram" align="middle" src="git_workflow.jpeg"
+    alt="block diagram showing git version control workflow" width="800" height="450" />
+  <p> Git version control workflow consists of four fundamental elements as shown in the block diagram above. </p>
   <!-- <h2> Working Directory</h2> -->
   <p> The <b>working directory</b> is the area where you are working with when you're making changes to your file. It is
     a
@@ -46,7 +47,8 @@
       command. This enables changes that you made to be visible to anyone who has access to the remote repository.</li>
   </ol>
   </p>
-  <p>Now for the opposite flow i.e. when extracting files from the remote repository (demonstrated by blue arrows in the <a href="#block_diagram">Git workflow block diagram</a>), you use the command <b>git fetch
+  <p>Now for the opposite flow i.e. when extracting files from the remote repository (demonstrated by blue arrows in the
+    <a href="#block_diagram">Git workflow block diagram</a>), you use the command <b>git fetch
     </b> to extract files from the remote repository to your local repository. Note that at this point the project
     files are not yet in the working directory. In order to do that you use the command <b>git merge.</b> This will
     update
@@ -77,12 +79,16 @@
   <h2> Fork and clone</h2>
   <p>In Github, a fork is a copy of a repository. Forking a repository allows you to make changes to a project without
     affecting the original project. Forking is something you do when you are not a direct collaborator to a project. You
-    can fork a repository simply by clicking on the fork button in the header of
-    a repository.</p>
+    can fork a repository simply by clicking on the fork button in the header (top right corner) of
+    a repository as shown in the image below .</p>
+
+  <img src="fork.PNG" alt="example displaying the fork button in Github" width="400" height="100" />
 
   <p>Cloning on the other hand means, creating a local copy a remotely located project on your computer so that you can
     sync between the local and remote locations of the project.In Git,cloning can be performed using the command <b>git
       clone.</b></p>
+  </br>
+  </br>
 
   <h1>Unix shell</h1>
   <p>A <b>shell </b>is a program that provides an interface between a user and an operating system (OS) kernel. It
@@ -97,69 +103,82 @@
   <img src="bashprompt.PNG" alt="default Git bash prompt" width="700" height="300" />
   <p>which translates to:</p>
   <p> <i>username @ current computer: current directory $</i></p>
-  <p> The prompt can be customized to show what you want. You can start typing commands after the $ sign. Now let us perform some of the common operations in Unix Shell using Git Bash.</p>
-<h2> Listing files in a directory</h2>
-<p> You can use the <i>ls </i>command to list the files and directories in the current working directory.</p>
-<img src="ls.PNG" alt="default Git bash prompt" width="700" height="300" />
-<p>You can limit the files that are displayed by using fragments of filenames and wildcards as shown below:</p>
-<table cellpadding="10" cellspacing="5">
-  <tr>
-    <td><mark>ls star</mark></td>
-    <td>Lists files whose complete name is <i>star</i>; if <i>star</i> is a directory, it will display the contents of the <i>star</i> directory </td>
-  </tr>
-  <tr>
-    <td><mark>ls sta*</mark></td>
-    <td>Lists all files in the directory that begin with the characters <i>sta</i> (e.g. <i>sta, star, stardom, starwars.</i>) </td>
-  </tr>
-  <tr>
-    <td><mark>ls star?</mark></td>
-    <td>Lists all files in the directory that begin <i>star</i> followed by one character (e.g. <i>star1, star2, stars.</i>) </td>
-  </tr>
-</table>
-<p>When using <i>ls</i> command, you can control what is displayed by adding options to it. Some of the common options are listed below. </p>
-<!-- Table 2 -->
-<table cellpadding="10" cellspacing="5">
-  <tr>
-    <td><mark>-a</mark></td>
-    <td>Shows all files, including those beginning with a period (.).</td>
-  </tr>
-  <tr>
-    <td><mark>-d</mark></td>
-    <td>Shows directory names, but not contents </td>
-  </tr>
-  <tr>
-    <td><mark>-F</mark></td>
-    <td>Marks special files with symbols to indicate what they are: "/" for directories, "@" for symbolic links, "*" for executable programs </td>
-  </tr>
-  <tr>
-    <td><mark>-l</mark></td>
-    <td>Shows the rights to the file, the owner, the size in bytes and time of last modification.</td>
-  </tr>
-  <tr>
-    <td><mark>-R</mark></td>
-    <td>Recursively lists subdirectories </td>
-  </tr>
-</table>
-<h2>Showing and changing the working directory</h2>
-<p>You can display your working directory using the <i>pwd </i>command.</p>
-<img src="pwd.PNG" alt="example displaying the current working directory using pwd command" width="700" height="300" />
-<p>The above example shows that the user is currently in <i>aalya </i>folder in the <i>Users</i> directory of <i>C </i> drive </p>.
-<p>You can change the working directory to a different one using the <i>cd </i>command followed by the directory name.</p> 
-<img src="cd.PNG" alt="example for changing the working directory." width="700" height="300" />
-<p>The above example shows that the working directory has been changed to <i>Desktop</i> under <i>aalya </i>folder in the <i>Users</i> directory of <i>C </i> drive. A quick check using <i>pwd </i>command will confirm this. </p>. 
-<img src="pwd2.PNG" alt="example for checking the working directory after changing it." width="700" height="300" />
+  <p> The prompt can be customized to show what you want. You can start typing commands after the $ sign. Now let us
+    perform some of the common operations in Unix Shell using Git Bash.</p>
+  <h2> Listing files in a directory</h2>
+  <p> You can use the <i>ls </i>command to list the files and directories in the current working directory.</p>
+  <img src="ls.PNG" alt="default Git bash prompt" width="700" height="300" />
+  <p>You can limit the files that are displayed by using fragments of filenames and wildcards as shown below:</p>
+  <table cellpadding="10" cellspacing="5">
+    <tr>
+      <td><mark>ls star</mark></td>
+      <td>Lists files whose complete name is <i>star</i>; if <i>star</i> is a directory, it will display the contents of
+        the <i>star</i> directory </td>
+    </tr>
+    <tr>
+      <td><mark>ls sta*</mark></td>
+      <td>Lists all files in the directory that begin with the characters <i>sta</i> (e.g. <i>sta, star, stardom,
+          starwars.</i>) </td>
+    </tr>
+    <tr>
+      <td><mark>ls star?</mark></td>
+      <td>Lists all files in the directory that begin <i>star</i> followed by one character (e.g. <i>star1, star2,
+          stars.</i>) </td>
+    </tr>
+  </table>
+  <p>When using <i>ls</i> command, you can control what is displayed by adding options to it. Some of the common options
+    are listed below. </p>
+  <!-- Table 2 -->
+  <table cellpadding="10" cellspacing="5">
+    <tr>
+      <td><mark>-a</mark></td>
+      <td>Shows all files, including those beginning with a period (.).</td>
+    </tr>
+    <tr>
+      <td><mark>-d</mark></td>
+      <td>Shows directory names, but not contents </td>
+    </tr>
+    <tr>
+      <td><mark>-F</mark></td>
+      <td>Marks special files with symbols to indicate what they are: "/" for directories, "@" for symbolic links, "*"
+        for executable programs </td>
+    </tr>
+    <tr>
+      <td><mark>-l</mark></td>
+      <td>Shows the rights to the file, the owner, the size in bytes and time of last modification.</td>
+    </tr>
+    <tr>
+      <td><mark>-R</mark></td>
+      <td>Recursively lists subdirectories </td>
+    </tr>
+  </table>
+  <h2>Showing and changing the working directory</h2>
+  <p>You can display your working directory using the <i>pwd </i>command.</p>
+  <img src="pwd.PNG" alt="example displaying the current working directory using pwd command" width="700"
+    height="300" />
+  <p>The above example shows that the user is currently in <i>aalya </i>folder in the <i>Users</i> directory of <i>C
+    </i> drive </p>.
+  <p>You can change the working directory to a different one using the <i>cd </i>command followed by the directory name.
+  </p>
+  <img src="cd.PNG" alt="example for changing the working directory." width="700" height="300" />
+  <p>The above example shows that the working directory has been changed to <i>Desktop</i> under <i>aalya </i>folder in
+    the <i>Users</i> directory of <i>C </i> drive. A quick check using <i>pwd </i>command will confirm this. </p>.
+  <img src="pwd2.PNG" alt="example for checking the working directory after changing it." width="700" height="300" />
 </body>
 
 <h2>Creating a new directory</h2>
 <p>You can create a new directory by using the <i>mkdir </i>command followed by the directory name.</p>
 <img src="mkdir.PNG" alt="example for creating a new directory." width="700" height="300" />
-<p>In the above snapshot, a new directory named <i>mydirectory </i> has been created in the working directory i.e.Desktop in this case. You can check the existence of the new directory that has just been created simply by running the <i>ls</i> command or directly going to the working directory.</p>
+<p>In the above snapshot, a new directory named <i>mydirectory </i> has been created in the working directory
+  i.e.Desktop in this case. You can check the existence of the new directory that has just been created simply by
+  running the <i>ls</i> command or directly going to the working directory.</p>
 
 <h2> Creating files</h2>
 <p>There are different ways to create a file in Unix shell:</p>
-<p><b>Using touch command</b> </p> 
+<p><b>Using touch command</b> </p>
 <p> <mark>$ touch myfile.txt</mark></p>
-<p>In the above example, a new text file named <i>myfile </i> is created in the working directory. The newly created file will be listed when running the <i>ls </i>command. </p>
+<p>In the above example, a new text file named <i>myfile </i> is created in the working directory. The newly created
+  file will be listed when running the <i>ls </i>command. </p>
 
 <p><b>Using nano text editor</b></p>
 <p><mark>$ nano myfile.txt</mark></p>
@@ -170,7 +189,13 @@ This is run a text editor called Nano and create a file named myfile.txt
 <p><mark>$ rm myfile.txt </mark></p>
 <p>In the above example, file named <i>myfile.txt</i> is removed from the working directory.</p>
 <h1>Wrapping up</h1>
-<p> I have only scratched the surface of what is Git workflow and Unix shell. You can learn more on some of the advanced features of Git <a href="https://git-scm.com/book/en/v2">here</a>. There are also plenty of resources available online on Unix shell. Like most new concepts, the best way to learn Unix shell is to play around with it, until you know most commands by heart.  </p>
+<p> I have only scratched the surface of what is Git workflow and Unix shell. You can learn more on some of the advanced
+  features of Git <a href="https://git-scm.com/book/en/v2">here</a>. There are also plenty of resources available online
+  on Unix shell. Like most new concepts, the best way to learn Unix shell is to play around with it, until you know most
+  commands by heart. </p>
+</br>
+</br>
 
 </body>
+
 </html>
