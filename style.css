@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+body {
+  background-color: antiquewhite;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.jumbotron {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  background-color: #592e83;
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+}
+.img-thumbnail {
+  border: 3px solid #dee2e6;
+  margin: 20px auto;
+  align-items: center;
+  align-self: auto;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  display: inline-block;
+  margin: 15px auto;
+  justify-content: left;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 25px;
+  color: #592e83;
+}
+h3 {
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+mark {
+  background-color: #b57b86;
+  padding-left:10px;
+  padding-right:10px;
+}
+td{
+    padding-left:10px;
+    margin-left:10px;
+}
+   
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+  }
+
+  td {
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    font-weight: 500;
+    color: #000;
+   
+    text-align: left;
+    font-size: 18px;
+  }
+
+  td.left{
+    text-align:center;
+    width: 30%;
+  }
+
+ .top{
+     text-align: center;
+     margin-bottom:30px;
+     color:blueviolet;
+     cursor: pointer;
+ }
